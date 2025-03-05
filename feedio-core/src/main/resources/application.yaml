@@ -1,0 +1,10 @@
+server:
+  address: 0.0.0.0
+
+spring:
+  application:
+    name: feedio-core
+
+logging:
+  level:
+    dev.vozniack.feedio.core: DEBUG
