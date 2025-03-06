@@ -5,6 +5,28 @@ spring:
   application:
     name: feedio-core
 
+  datasource:
+    url: jdbc:postgresql://localhost:5432/feedio_db
+    username: feedio_admin
+    password: admin
+
+  flyway:
+    url: ${spring.datasource.url}
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    table: schema_version
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+
 logging:
   level:
     dev.vozniack.feedio.core: DEBUG
+
+feedio:
+  security:
+    jwt:
+      secret: 656uzf9s3JhPGu1HSj6nkhV8-Jc-TH43C5Wd5p_BH9Zfbq03n4hWMFlskVP6_tZScNWBOmUAmNxgPVTuOmv6lw
+      expiration: 1800000

@@ -1,0 +1,17 @@
+name: feedio
+
+services:
+  postgres:
+    container_name: feedio-postgres
+    image: postgres:16.4
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: feedio_db
+      POSTGRES_USER: feedio_admin
+      POSTGRES_PASSWORD: admin
+
+networks:
+  feedio-network:
+    driver: bridge
