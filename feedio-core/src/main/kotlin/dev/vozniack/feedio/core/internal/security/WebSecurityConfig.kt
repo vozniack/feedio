@@ -26,8 +26,8 @@ class WebSecurityConfig(@Value("\${feedio.security.jwt.secret}") private val jwt
     fun securityFilterChain(httpSecurity: HttpSecurity): SecurityFilterChain = httpSecurity.cors { }
         .csrf { it.disable() }
         .authorizeHttpRequests { it.requestMatchers(HttpMethod.GET, "/actuator/health").permitAll() }
-        .authorizeHttpRequests { it.requestMatchers(HttpMethod.POST, "/api/v1/auth/*").permitAll() }
-        .authorizeHttpRequests { it.requestMatchers("/api/v1/**").authenticated() }
+        .authorizeHttpRequests { it.requestMatchers(HttpMethod.POST, "/api/auth/*").permitAll() }
+        .authorizeHttpRequests { it.requestMatchers("/api/**").authenticated() }
         .sessionManagement { it.sessionCreationPolicy(SessionCreationPolicy.STATELESS) }
         .addFilterBefore(AuthenticationFilter(jwtSecret), BasicAuthenticationFilter::class.java)
         .exceptionHandling { it.authenticationEntryPoint(HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)) }
