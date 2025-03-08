@@ -1,0 +1,72 @@
+// Basic colors
+
+$white: rgb(255, 255, 255);
+$black: rgb(0, 0, 0);
+
+// Theme
+
+$primary: var(--primary);
+$primary-container: var(--primary-container);
+
+$secondary: var(--secondary);
+$secondary-container: var(--secondary-container);
+
+$tertiary: var(--tertiary);
+$tertiary-container: var(--tertiary-container);
+
+$success: var(--success);
+$success-container: var(--success-container);
+
+$error: var(--error);
+$error-container: var(--error-container);
+
+$surface: var(--surface);
+$surface-container: var(--surface-container);
+$neutral: var(--neutral);
+$neutral-inverse: var(--neutral-inverse);
+
+// Actual themes
+
+[theme="theme-light"] {
+  --primary: #ffffff;
+  --primary-container: #ffffff;
+
+  --secondary: #ffffff;
+  --secondary-container: #ffffff;
+
+  --tertiary: #ffffff;
+  --tertiary-container: #ffffff;
+
+  --success: #ffffff;
+  --success-container: #ffffff;
+
+  --error: #ffffff;
+  --error-container: #ffffff;
+
+  --surface: #ffffff;
+  --surface-container: #ffffff;
+  --neutral: #ffffff;
+  --neutral-inverse: #ffffff;
+}
+
+[theme="theme-dark"] {
+  --primary: #000000;
+  --primary-container: #000000;
+
+  --secondary: #000000;
+  --secondary-container: #000000;
+
+  --tertiary: #000000;
+  --tertiary-container: #000000;
+
+  --success: #000000;
+  --success-container: #000000;
+
+  --error: #000000;
+  --error-container: #000000;
+
+  --surface: #000000;
+  --surface-container: #000000;
+  --neutral: #000000;
+  --neutral-inverse: #000000;
+}

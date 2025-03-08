@@ -1,0 +1,22 @@
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 0 auto;
+
+  flex: 0 0 100%;
+  max-width: 1600px;
+
+  sec-content {
+    margin: 8px 16px;
+  }
+
+  sec-bottom-bar {
+    margin-top: 84px;
+  }
+
+  &.not-logged {
+    max-width: none;
+  }
+}

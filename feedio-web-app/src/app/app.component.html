@@ -1,1 +1,4 @@
-<router-outlet />
+<div class="main-wrapper" [class.not-logged]="!logged">
+  <fe-content *ngIf="logged"></fe-content>
+  <fe-login *ngIf="!logged"></fe-login>
+</div>
