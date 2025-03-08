@@ -22,7 +22,7 @@ class AuthenticationFilter(private val jwtSecret: String) : OncePerRequestFilter
         response: HttpServletResponse,
         filterChain: FilterChain,
     ) {
-        takeIf { !(request.requestURL.contains("api/v1/auth") || request.requestURL.contains("actuator/health")) }?.let {
+        takeIf { !(request.requestURL.contains("api/auth") || request.requestURL.contains("actuator/health")) }?.let {
             val token = parseJwtToken(request) ?: throw UnauthorizedException("Token is not present")
             val loggedUser = buildLoggedUser(token) ?: throw UnauthorizedException("Token is not valid")
 
