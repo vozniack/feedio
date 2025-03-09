@@ -24,6 +24,6 @@ export class I18nService {
   }
 
   setLanguage(language: string) {
-    this.store.dispatch(ACTION_SET_LANGUAGE({language: language != null ? language : 'en_EN'}));
+    this.store.dispatch(ACTION_SET_LANGUAGE({language: language != null ? language : 'en_US'}));
   }
 }

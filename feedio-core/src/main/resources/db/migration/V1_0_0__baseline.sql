@@ -9,7 +9,6 @@ CREATE TABLE users
 
     first_name    VARCHAR(255) NOT NULL,
     last_name     VARCHAR(255) NOT NULL,
-    date_of_birth DATE         NOT NULL,
     language      VARCHAR(255) NOT NULL             DEFAULT 'en_EN',
 
     active        BOOLEAN      NOT NULL             DEFAULT FALSE,

@@ -1,0 +1,195 @@
+@import 'theme.scss';
+
+.select-input {
+  margin: 0;
+  padding: 0;
+
+  position: relative;
+
+  .name {
+    margin-bottom: 8px;
+    color: $neutral;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .form {
+    width: 100%;
+    border-radius: 8px;
+
+    position: relative;
+    transition: border-color 0.1s ease-in-out, background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+
+    .select {
+      width: 100%;
+
+      font-family: 'Montserrat', sans-serif;
+      color: $neutral;
+
+      box-sizing: border-box;
+      background: none;
+      border: none;
+
+      cursor: pointer;
+
+      .value {
+        position: absolute;
+      }
+
+      &::placeholder {
+        font-size: 10px;
+        font-weight: 500;
+        color: color-mix(in srgb, $neutral 50%, transparent);
+      }
+
+      ::-webkit-outer-spin-button, ::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+
+    .icon {
+      position: absolute;
+      color: $primary;
+
+      transform: rotate(90deg);
+      transition: transform 0.1s ease-in-out, color 0.1s ease-in-out;
+
+      &.active {
+        transform: rotate(-90deg);
+      }
+    }
+
+    /* Sizes */
+
+    &.small {
+      min-width: 56px;
+      .icon {
+        top: 5px;
+        right: 10px;
+      }
+
+      .select {
+        height: 30px;
+        padding: 4px 16px;
+
+        font-size: 12px;
+
+        .value {
+          top: 8px;
+          left: 12px;
+        }
+      }
+    }
+
+    &.normal {
+      .icon {
+        top: 8px;
+        right: 16px;
+      }
+
+      .select {
+        height: 40px;
+        padding: 5px 20px;
+
+        font-size: 12px;
+
+        .value {
+          top: 12px;
+          left: 20px;
+        }
+
+      }
+    }
+
+    /* Styles */
+
+    &.outlined {
+      border: 1px solid color-mix(in srgb, $primary 25%, transparent);
+
+      &:hover, &:focus {
+        border-color: $primary;
+      }
+
+      &.invalid {
+        border-color: $error;
+
+        .icon {
+          color: $error;
+        }
+      }
+    }
+  }
+
+  .select-options {
+    top: 40px;
+    left: 0;
+
+    padding: 4px 8px;
+
+    box-sizing: border-box;
+    position: absolute;
+
+    z-index: 100;
+
+    max-height: 256px;
+    overflow-y: auto;
+
+    background-color: $surface;
+    border: 1px solid color-mix(in srgb, $primary 25%, transparent);
+
+    border-radius: 8px;
+
+    .option {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      height: 16px;
+      padding: 8px;
+
+      font-size: 14px;
+      color: $neutral;
+      border-radius: 8px;
+
+      transition: background-color 0.1s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        background: $surface-container;
+      }
+
+      &.empty {
+        font-size: 14px;
+        color: $neutral;
+      }
+
+      sec-icon {
+        color: $primary;
+      }
+    }
+
+    /* Sizes */
+
+    &.small {
+      padding: 4px;
+
+      .option {
+        font-size: 12px;
+
+        sec-icon {
+          margin-right: -4px;
+        }
+      }
+    }
+
+    &.normal {
+      padding: 8px;
+
+      .option {
+        font-size: 14px;
+      }
+    }
+  }
+}

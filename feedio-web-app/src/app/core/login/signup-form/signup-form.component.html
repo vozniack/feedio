@@ -1,0 +1,61 @@
+<div class="column-container gap">
+  <fe-text-input
+    [control]="getControl('email')"
+    [id]="'email'"
+    [name]="'email'"
+    [placeholder]="'common.email' | translate"
+    [placeholderShrink]="false"
+    [icon]="'mail'"
+    [style]="'outlined'">
+  </fe-text-input>
+
+  <fe-text-input
+    [control]="getControl('password')"
+    [id]="'password'"
+    [name]="'password'"
+    [type]="'password'"
+    [placeholder]="'common.password' | translate"
+    [placeholderShrink]="false"
+    [password]="true"
+    [style]="'outlined'">
+  </fe-text-input>
+
+  <div class="row-container gap" [style.flex]="100">
+    <fe-text-input
+      [control]="getControl('firstName')"
+      [id]="'firstName'"
+      [name]="'firstName'"
+      [placeholder]="'common.firstName' | translate"
+      [placeholderShrink]="false"
+      [style]="'outlined'"
+      [style.flex]="35">
+    </fe-text-input>
+
+    <fe-text-input
+      [control]="getControl('lastName')"
+      [id]="'lastName'"
+      [name]="'lastName'"
+      [placeholder]="'common.lastName' | translate"
+      [placeholderShrink]="false"
+      [style]="'outlined'"
+      [style.flex]="35">
+    </fe-text-input>
+
+    <fe-select-input
+      [control]="getControl('language')"
+      [options]="languages"
+      [id]="'language'"
+      [name]="'Language'"
+      [style]="'outlined'"
+      [allowEmpty]="false"
+      [style.flex]="30">
+    </fe-select-input>
+  </div>
+
+  <fe-button
+    (click)="signup()"
+    [disabled]="form.invalid"
+    [text]="'login.signMeUp' | translate"
+    [style]="'filled'">
+  </fe-button>
+</div>

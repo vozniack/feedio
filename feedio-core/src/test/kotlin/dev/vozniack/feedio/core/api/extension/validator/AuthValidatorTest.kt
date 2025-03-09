@@ -32,11 +32,6 @@ class AuthValidatorTest {
             mockSignupRequest(lastName = "").validate()
         }
 
-        // missing date of birth
-        assertThrows<BadRequestException> {
-            mockSignupRequest(dateOfBirth = "").validate()
-        }
-
         // missing language
         assertThrows<BadRequestException> {
             mockSignupRequest(language = "").validate()
@@ -65,11 +60,6 @@ class AuthValidatorTest {
         // password without special character
         assertThrows<BadRequestException> {
             mockSignupRequest(password = "J0hn123").validate()
-        }
-
-        // date of birth in not correct ISO form
-        assertThrows<BadRequestException> {
-            mockSignupRequest(dateOfBirth = "01-01-1990").validate()
         }
 
         // language in not correct ISO form

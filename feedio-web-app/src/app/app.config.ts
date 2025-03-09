@@ -22,7 +22,7 @@ export const appConfig: ApplicationConfig = {
     provideState('feedio-storage', appReducer),
     provideStore(appReducer, {metaReducers: [persistState as MetaReducer]}),
     provideTranslateService({
-      defaultLanguage: 'en',
+      defaultLanguage: navigator.language.split('-')[0],
       loader: {provide: TranslateLoader, useFactory: httpLoaderFactory, deps: [HttpClient]}
     })
   ]

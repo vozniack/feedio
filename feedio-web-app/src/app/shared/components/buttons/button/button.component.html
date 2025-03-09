@@ -1,0 +1,12 @@
+<button [disabled]="disabled"
+        class="button {{style}} {{size}}"
+        [class.disabled]="disabled"
+        [style.width]="width"
+        [style.max-width]="maxWidth">
+  <fe-icon class="icon-left" *ngIf="iconLeft" [name]="iconLeft" [size]="getIconSize()"></fe-icon>
+
+  <fe-icon *ngIf="icon" [name]="icon" [size]="getIconSize()"></fe-icon>
+  <span *ngIf="!icon">{{ text }}</span>
+
+  <fe-icon class="icon-right" *ngIf="iconRight" [name]="iconRight" [size]="getIconSize()"></fe-icon>
+</button>

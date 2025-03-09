@@ -1,18 +1,24 @@
 <div class="row-container" [style.height]="isMobile ? '90vh' : 'auto'" @fadeInAnimation>
   <fe-animated-background *ngIf="!isMobile" style="flex: 60"></fe-animated-background>
 
-  <div class="login-form-wrapper" [style.flex]="isMobile ? 100 : 40">
+  <div class="login-wrapper" [style.flex]="isMobile ? 100 : 40">
 
-    <div class="welcome-wrapper column-container gap">
-      <div class="logo row-container gap">
-        <img alt="logo" ngSrc="/images/logo.png" [width]="80" [height]="80"/>
+    <div class="welcome-wrapper row-container gap">
+      <img alt="logo" ngSrc="/images/logo.png" [width]="64" [height]="64"/>
+
+      <div class="column-container">
         <h1>FeedIO</h1>
+        <span [innerHTML]="'login.description' | translate"></span>
       </div>
-
-      <span [innerHTML]="'login.description' | translate"></span>
     </div>
 
+    <fe-segment-button [segments]="segments" [active]="active" [width]="'256px'" [icon]="false"
+                       (segmentChange)="onSegmentChange($event)">
+    </fe-segment-button>
+
     <div class="form-wrapper">
+      <fe-login-form *ngIf="active.value === 'LOGIN'" @fadeInAnimation></fe-login-form>
+      <fe-signup-form *ngIf="active.value === 'SIGNUP'" @fadeInAnimation></fe-signup-form>
     </div>
   </div>
 </div>
