@@ -1,0 +1,29 @@
+<div class="column-container gap">
+  <fe-text-input
+    [control]="getControl('email')"
+    [id]="'email'"
+    [name]="'email'"
+    [placeholder]="'common.email' | translate"
+    [placeholderShrink]="false"
+    [icon]="'mail'"
+    [style]="'outlined'">
+  </fe-text-input>
+
+  <fe-text-input
+    [control]="getControl('password')"
+    [id]="'password'"
+    [name]="'password'"
+    [type]="'password'"
+    [placeholder]="'common.password' | translate"
+    [placeholderShrink]="false"
+    [password]="true"
+    [style]="'outlined'">
+  </fe-text-input>
+
+  <fe-button
+    (click)="login()"
+    [disabled]="form.invalid"
+    [text]="'login.logMeIn' | translate"
+    [style]="'filled'">
+  </fe-button>
+</div>

@@ -1,0 +1,105 @@
+@import 'theme.scss';
+
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  margin: auto;
+
+  cursor: pointer;
+  outline: none;
+  border: none;
+
+  border-radius: 8px;
+
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
+
+  &:disabled {
+    cursor: default;
+  }
+
+  /* Sizes */
+
+  &.small {
+    height: 30px;
+    padding: 4px 12px;
+    font-size: 12px;
+
+    .icon-left {
+      margin-left: -6px;
+    }
+
+    .icon-right {
+      margin-right: -6px;
+    }
+  }
+
+  &.normal {
+    height: 38px;
+    padding: 4px 16px;
+    font-size: 14px;
+
+    .icon-left {
+      margin-left: -8px;
+    }
+
+    .icon-right {
+      margin-right: -8px;
+    }
+  }
+
+  /* Styles */
+
+  &.filled {
+    border: 1px solid $primary;
+    background-color: $primary;
+    color: $white;
+
+    &:hover {
+      color: $primary;
+      background: none;
+    }
+
+    &:disabled {
+      border-color: color-mix(in srgb, $primary 0%, transparent);
+      background-color: color-mix(in srgb, $primary 50%, transparent);
+      color: rgba($white, 0.5);
+    }
+  }
+
+  &.tonal {
+    background-color: color-mix(in srgb, $primary 5%, transparent);
+    color: $primary;
+
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+
+    &:disabled {
+      background-color: color-mix(in srgb, $primary 5%, transparent);
+      color: color-mix(in srgb, $primary 50%, transparent);
+    }
+  }
+
+  &.outlined {
+    border: 1px solid color-mix(in srgb, $primary 25%, transparent);
+    background: none;
+    color: $primary;
+
+    &:hover, &.active {
+      border: 1px solid $primary;
+    }
+
+    &:disabled {
+      color: color-mix(in srgb, $primary 50%, transparent);
+
+      &:hover {
+        border: 1px solid color-mix(in srgb, $primary 25%, transparent);
+      }
+    }
+  }
+}

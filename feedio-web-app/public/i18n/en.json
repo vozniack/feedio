@@ -1,2 +1,17 @@
 {
+  "common": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email address",
+    "password": "Password"
+  },
+  "login": {
+    "description": "A simple RSS reader.",
+    "logMeIn": "Log me in",
+    "signMeUp": "Sign me up",
+    "types": {
+      "signup": "Signup",
+      "login": "Login"
+    }
+  }
 }

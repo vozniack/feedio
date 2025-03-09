@@ -2,8 +2,8 @@ import { AppState } from './app.state';
 
 export const initialAppState = (): AppState => {
   return {
-    language: 'en',
-    theme: 'light',
+    language: navigator.language.replace('-', '_'),
+    theme: 'theme-light',
     user: {
       token: undefined
     }

@@ -1,0 +1,25 @@
+<div class="select-input"
+     [style.width]="width"
+     [style.max-width]="maxWidth"
+     [style.margin]="maxWidth ? 'auto' : 0">
+  <div class="form {{size}} {{style}}" [class.invalid]="!control.untouched && control.invalid">
+
+    <fe-icon class="icon" [class.active]="active" [name]="'chevron_right'"
+             [size]="size == 'normal' ? 20 : 16"></fe-icon>
+
+    <div class="select">
+      <span class="value">{{ getOptionName() }}</span>
+    </div>
+  </div>
+
+  <div class="select-options {{size}}" [style.width]="width" *ngIf="active" @fadeInAnimation>
+    <div class="option empty" *ngIf="allowEmpty" (click)="setValue(null)" @fadeInAnimation>
+      <span>. . .</span>
+    </div>
+
+    <div class="option" *ngFor="let option of options" (click)="setValue(option.value)" @fadeInAnimation>
+      <span>{{ option.text }}</span>
+      <fe-icon *ngIf="option.value == control.value" [name]="'check'" [size]="size == 'normal' ? 20 : 16"></fe-icon>
+    </div>
+  </div>
+</div>

@@ -5,7 +5,6 @@ import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.Id
 import jakarta.persistence.Table
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.util.UUID
 
@@ -21,7 +20,6 @@ data class User(
 
     @Column(nullable = false) var firstName: String,
     @Column(nullable = false) var lastName: String,
-    @Column(nullable = false) var dateOfBirth: LocalDate,
     @Column(nullable = false) var language: String,
 
     @Column(nullable = false) var active: Boolean = false,

@@ -1,2 +1,17 @@
 {
+  "common": {
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "email": "Adres email",
+    "password": "Hasło"
+  },
+  "login": {
+    "description": "Prosty czytnik RSS.",
+    "logMeIn": "Zaloguj mnie",
+    "signMeUp": "Zarejestruj mnie",
+    "types": {
+      "signup": "Rejestracja",
+      "login": "Logowanie"
+    }
+  }
 }
