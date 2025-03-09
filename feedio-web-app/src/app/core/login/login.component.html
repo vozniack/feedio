@@ -1,1 +1,18 @@
-<h1>Login</h1>
+<div class="row-container" [style.height]="isMobile ? '90vh' : 'auto'" @fadeInAnimation>
+  <fe-animated-background *ngIf="!isMobile" style="flex: 60"></fe-animated-background>
+
+  <div class="login-form-wrapper" [style.flex]="isMobile ? 100 : 40">
+
+    <div class="welcome-wrapper column-container gap">
+      <div class="logo row-container gap">
+        <img alt="logo" ngSrc="/images/logo.png" [width]="80" [height]="80"/>
+        <h1>FeedIO</h1>
+      </div>
+
+      <span [innerHTML]="'login.description' | translate"></span>
+    </div>
+
+    <div class="form-wrapper">
+    </div>
+  </div>
+</div>

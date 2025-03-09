@@ -22,7 +22,7 @@ import { UserState } from './store/app/app.state';
 })
 export class AppComponent extends ResponsiveComponent {
 
-  logged: boolean = true;
+  logged: boolean = false;
 
   constructor(private store: Store, private router: Router, private i18nService: I18nService, private themeService: ThemeService, override breakpointObserver: BreakpointObserver) {
     super(breakpointObserver);

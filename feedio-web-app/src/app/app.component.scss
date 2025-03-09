@@ -6,17 +6,13 @@
   margin: 0 auto;
 
   flex: 0 0 100%;
-  max-width: 1600px;
+  max-width: none;
 
-  sec-content {
+  fe-content {
     margin: 8px 16px;
   }
 
-  sec-bottom-bar {
-    margin-top: 84px;
-  }
-
-  &.not-logged {
-    max-width: none;
+  &.logged {
+    max-width: 1600px;
   }
 }

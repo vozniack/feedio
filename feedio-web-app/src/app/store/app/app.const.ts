@@ -3,7 +3,7 @@ import { AppState } from './app.state';
 export const initialAppState = (): AppState => {
   return {
     language: 'en',
-    theme: 'light',
+    theme: 'theme-light',
     user: {
       token: undefined
     }
